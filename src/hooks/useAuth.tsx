@@ -57,13 +57,7 @@ function AuthProvider({ children }: AuthProviderData) {
 
       // assemble authUrl with twitchEndpoint authorization, client_id,
       // redirect_uri, response_type, scope, force_verify and state
-      const authUrl = `${twitchEndpoints.authorization}
-        ?client_id=${CLIENT_ID}
-        &redirect_uri=${REDIRECT_URI}
-        &response_type=${RESPONSE_TYPE}
-        &scope=${SCOPE}
-        &force_verify=${FORCE_VERIFY}
-        &state=${STATE}`;
+      const authUrl = `${twitchEndpoints.authorization}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&force_verify=${FORCE_VERIFY}&state=${STATE}`;
 
       // call startAsync with authUrl
       const authResponse = await startAsync({ authUrl });
